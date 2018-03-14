@@ -1021,7 +1021,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight, unsi
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 60 * 60;  // 60 mins
+static const int64_t nTargetTimespan = 60 * 60;  // 60 mins - "ideal block time" the network will readjust the hashing difficulty to try to make sure a block is found only once every 60 minutes
 static const int64_t nStakeTargetTimespan = 2 * 60 * 60; // 2 Hours
 static const int64_t nFlashStakeTargetTimespan = 10 * 60; // 10 mins
 
@@ -2630,7 +2630,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         // Genesis block
 
-        const char* pszTimestamp = "A black hole is a stable energy construct that occupies greater than three dimensions of physical space.";
+        const char* pszTimestamp = "03/13/2018 Global warming puts nearly half of species in key places at risk: report";
         CTransaction txNew;
         txNew.nTime = 1486329989;
         txNew.vin.resize(1);
@@ -2643,7 +2643,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1486329989;
+        block.nTime    = 1520997308;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = !fTestNet ? 6777712 : 23112;
 
@@ -2669,7 +2669,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nNonce = %u \n", block.nNonce);
 
         //// debug print
-        assert(block.hashMerkleRoot == uint256("0x96f872319c330aadbdc18543e27a305c6ab046801cfc81e20a004f3b26fad891"));
+        assert(block.hashMerkleRoot == uint256("0x"));
         block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
