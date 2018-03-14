@@ -273,9 +273,9 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 3,
+        PUBKEY_ADDRESS = 38, // Givecoin uses G for the first letter of address
         SCRIPT_ADDRESS = 28,
-        PUBKEY_ADDRESS_TEST = 55,
+        PUBKEY_ADDRESS_TEST = 98, // g for first testnet letter
         SCRIPT_ADDRESS_TEST = 196,
     };
 
