@@ -2654,6 +2654,7 @@ bool LoadBlockIndex(bool fAllowNew)
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             while (block.GetHash() > hashTarget)
                {
+				printf("Finding genesis hash");
                    ++block.nNonce;
                    if (block.nNonce == 0)
                    {
