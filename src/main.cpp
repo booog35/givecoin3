@@ -2632,7 +2632,7 @@ bool LoadBlockIndex(bool fAllowNew)
 
         const char* pszTimestamp = "03/13/2018 Global warming puts nearly half of species in key places at risk: report";
         CTransaction txNew;
-        txNew.nTime = 1486329989;
+        txNew.nTime = 1520997308;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2648,7 +2648,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nNonce   = !fTestNet ? 6777712 : 23112;
 
         if (true && (block.GetHash() != hashGenesisBlock)) {
-
+			printf("Finding genesis hash");
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
